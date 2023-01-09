@@ -1,15 +1,12 @@
 import java.time.LocalDate;
 
 public class Main {
-    private static boolean yearIsLeap;
 
     public static void main(String[] args) {
-        printIsLeapYear(2024);
+       printIsLeapYear(2024);
         recommendApplicationVersion(0,2022);
         calculateDeliveryDays(80);
-        }
-
-    private static void printIsLeapYear(int year) {
+    }
 
     // Задача №1
 
@@ -22,26 +19,17 @@ public class Main {
         «...  год — високосный год». Если год невисокосный, то: «... год — невисокосный год».
          */
 
-        System.out.println("Задача №1");
+   private static void printIsLeapYear(int year) {
+       System.out.println("Задача №1");
 
-            if (yearIsLeap) {
-                System.out.println(year + " - високосный ");
-            } else {
-                System.out.println(year + " -  невисокосный");
-            }
-        }
+       if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+           System.out.println(year + " - високосный ");
+       } else {
+           System.out.println(year + " - невисокосный");
+       }
+   }
 
-    private static void printIsLeapYearResult(int year, boolean yearIsLeap) {
-        yearIsLeap = isLeap(year);
-        printIsLeapYearResult(year, yearIsLeap);
-    }
-
-    private static boolean isLeap(int year) {
-        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
-    }
-
-
-    // Задача №2
+        // Задача №2
 
         /* Напишите метод, куда подаются два параметра: тип операционной системы
         (0 — iOS, 1 — Android ) и год выпуска устройства.
@@ -53,21 +41,21 @@ public class Main {
         приложения (обычную или облегченную) и для какой ОС (Android или iOS) установить пользователю.
          */
 
-         public static void recommendApplicationVersion(int clientOS, int deviceYear) {
-         System.out.println("Задача №2");
+        public static void recommendApplicationVersion(int clientOS, int deviceYear) {
+            System.out.println("Задача №2");
 
-         boolean deviceIsOld = isDeviceOld(deviceYear);
-             System.out.print("Установите ");
-             if (deviceIsOld) {
-                 System.out.print("облегченную ");
-             }
-             System.out.print("версию для ");
-             if (clientOS == 0) {
-                 System.out.println("IOS");
-             } else {
-                 System.out.println("Android");
-             }
-         }
+            boolean deviceIsOld = isDeviceOld(deviceYear);
+            System.out.print("Установите ");
+            if (deviceIsOld) {
+                System.out.print("облегченную ");
+            }
+            System.out.print("версию для ");
+            if (clientOS == 0) {
+                System.out.println("IOS");
+            } else {
+                System.out.println("Android");
+            }
+        }
 
     private static boolean isDeviceOld(int deviceYear) {
              int currentYear = LocalDate.now().getYear();
@@ -86,8 +74,8 @@ public class Main {
             Доставка в пределах от 60 км до 100 км добавляет еще одни сутки.
             Свыше 100 км доставки нет.
             */
+        private static void calculateDeliveryDays(int deliveryDistance) {
 
-        public static void calculateDeliveryDays(int deliveryDistance) {
             System.out.println("Задача №3");
             int deliveryDays = 1;
             if (deliveryDays > 20) {
