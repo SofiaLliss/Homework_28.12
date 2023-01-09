@@ -19,7 +19,6 @@ public class Main {
         «...  год — високосный год». Если год невисокосный, то: «... год — невисокосный год».
          */
 
-
    private static void printIsLeapYear(int year) {
        System.out.println("Задача №1");
 
